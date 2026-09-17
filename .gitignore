@@ -1,0 +1,31 @@
+# Ignore ROMs and Emulators
+*.bin
+*.cue
+*.iso
+*.rom
+*.exe
+*.AppImage
+*.dmg
+
+# Ignore macOS system files
+.DS_Store
+
+# Igonre Python Environment and Cache
+__pycahce__/
+.venv/
+venv/
+env/
+
+# Go Build Artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.app
+
+# Wails
+build/bin/
+frontend/dist/
+frontend/node_modules/
+
