@@ -1,0 +1,19 @@
+{
+    "sotn": {
+        "id": "sotn",
+        "title": "Castlevania: Symphony of the Night",
+        "type": "native",
+    "executable_path": "games/sotn/symphony_recomp",
+    "core_path": "",
+        "rom_path": ""
+    },
+
+    "dracula_x": {
+    "id": "dracula_x",
+    "title": "Castlevania: Rondo of Blood",
+    "type": "emulated",
+    "executable_path": "emulators/retroarch/retroarch",
+    "core_path": "emulators/retroarch/cores/mednafen_pce_fast_libretro.dylib",
+    "rom_path": "games/rondo/rondo_of_blood.cue"
+  }
+}
