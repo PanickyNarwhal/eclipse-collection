@@ -1,19 +1,186 @@
 {
-    "sotn": {
-        "id": "sotn",
-        "title": "Castlevania: Symphony of the Night",
-        "type": "native",
+  "sotn": {
+    "id": "sotn",
+    "title": "Castlevania: Symphony of the Night",
+    "original_system": "PlayStation / PC Recomp",
+    "release_year": "1997",
+    "developer": "Konami Computer Entertainment Tokyo",
+    "synopsis": "Dracula's castle rises once more, but Richter Belmont has vanished. Awoken from his eternal slumber, Alucard enters the inverted realm to end his father's curse.",
+    "runner_type": "native",
     "executable_path": "games/sotn/symphony_recomp",
-    "core_path": "",
-        "rom_path": ""
-    },
-
-    "dracula_x": {
-    "id": "dracula_x",
+    "core_path": "cores/mednafen_psx_hw_libretro",
+    "supported_regions": ["US", "JP", "EU"],
+    "default_region": "US",
+    "theme_track": "assets/audio/sotn_theme.mp3",
+    "regions": {
+      "US": {
+        "title": "Castlevania: Symphony of the Night (US)",
+        "rom_path": "games/sotn/sotn_us.cue"
+      },
+      "JP": {
+        "title": "Akumajou Dracula X: Gekka no Yasoukyoku (JP)",
+        "rom_path": "games/sotn/sotn_jp.cue"
+      },
+      "EU": {
+        "title": "Castlevania: Symphony of the Night (EU)",
+        "rom_path": "games/sotn/sotn_eu.cue"
+      }
+    }
+  },
+  "rondo": {
+    "id": "rondo",
     "title": "Castlevania: Rondo of Blood",
-    "type": "emulated",
-    "executable_path": "emulators/retroarch/retroarch",
-    "core_path": "emulators/retroarch/cores/mednafen_pce_fast_libretro.dylib",
-    "rom_path": "games/rondo/rondo_of_blood.cue"
+    "original_system": "PC Engine Super CD-ROM²",
+    "release_year": "1993",
+    "developer": "Konami",
+    "synopsis": "Richter Belmont sets out with the legendary whip Vampire Killer to rescue his beloved Annette and young Maria Renard from the resurrected Lord of Darkness.",
+    "runner_type": "retroarch",
+    "core_path": "cores/mednafen_pce_fast_libretro",
+    "supported_regions": ["US", "JP"],
+    "default_region": "US",
+    "theme_track": "assets/audio/rondo_theme.mp3",
+    "regions": {
+      "US": {
+        "title": "Castlevania: Rondo of Blood (English Patched)",
+        "rom_path": "games/rondo/rondo_en.chd",
+        "patch_path": "patches/rondo_english.bps"
+      },
+      "JP": {
+        "title": "Akumajou Dracula X: Chi no Rondo (Original JP)",
+        "rom_path": "games/rondo/rondo_jp.chd"
+      }
+    }
+  },
+  "loi": {
+    "id": "loi",
+    "title": "Castlevania: Lament of Innocence",
+    "original_system": "PlayStation 2",
+    "release_year": "2003",
+    "developer": "Konami Computer Entertainment Tokyo",
+    "synopsis": "In the 11th century, knight Leon Belmont renounces his title to enter the forest of eternal night and save his betrothed Sara from the vampire Walter Bernhard—unveiling the origin of the whip and the Belmont clan's eternal crusade.",
+    "runner_type": "pcsx2",
+    "supported_regions": ["US", "JP", "EU"],
+    "default_region": "US",
+    "theme_track": "assets/audio/loi_theme.mp3",
+    "regions": {
+      "US": {
+        "title": "Castlevania: Lament of Innocence (US)",
+        "rom_path": "games/loi/loi_us.iso"
+      },
+      "JP": {
+        "title": "Castlevania (JP)",
+        "rom_path": "games/loi/loi_jp.iso"
+      },
+      "EU": {
+        "title": "Castlevania (EU)",
+        "rom_path": "games/loi/loi_eu.iso"
+      }
+    }
+  },
+  "cod": {
+    "id": "cod",
+    "title": "Castlevania: Curse of Darkness",
+    "original_system": "PlayStation 2",
+    "release_year": "2005",
+    "developer": "Konami Digital Entertainment",
+    "synopsis": "Three years after Trevor Belmont defeated Dracula, Hector, a former Devil Forgemaster seeking redemption, hunts his former comrade Isaac across a curse-ravaged Europe.",
+    "runner_type": "pcsx2",
+    "supported_regions": ["US", "JP", "EU"],
+    "default_region": "US",
+    "theme_track": "assets/audio/cod_theme.mp3",
+    "regions": {
+      "US": {
+        "title": "Castlevania: Curse of Darkness (US)",
+        "rom_path": "games/cod/cod_us.iso"
+      },
+      "JP": {
+        "title": "Akumajou Dracula: Yami no Juin (JP)",
+        "rom_path": "games/cod/cod_jp.iso"
+      },
+      "EU": {
+        "title": "Castlevania: Curse of Darkness (EU)",
+        "rom_path": "games/cod/cod_eu.iso"
+      }
+    }
+  },
+  "lod": {
+    "id": "lod",
+    "title": "Castlevania: Legacy of Darkness",
+    "original_system": "Nintendo 64",
+    "release_year": "1999",
+    "developer": "Konami Computer Entertainment Kobe",
+    "synopsis": "The definitive 3D gothic quest on Nintendo 64. Play as Cornell the Man-Beast, Henry the Knight, Reinhardt Schneider, or Carrie Fernandez to rescue young Ada from the dark ritual.",
+    "runner_type": "retroarch",
+    "core_path": "cores/mupen64plus_next_libretro",
+    "supported_regions": ["US", "JP", "EU"],
+    "default_region": "US",
+    "theme_track": "assets/audio/lod_theme.mp3",
+    "regions": {
+      "US": {
+        "title": "Castlevania: Legacy of Darkness (US)",
+        "rom_path": "games/lod/lod_us.z64"
+      },
+      "JP": {
+        "title": "Akumajou Dracula Mokushiroku Gaiden: Legend of Cornell (JP)",
+        "rom_path": "games/lod/lod_jp.z64"
+      },
+      "EU": {
+        "title": "Castlevania: Legacy of Darkness (EU)",
+        "rom_path": "games/lod/lod_eu.z64"
+      }
+    }
+  },
+  "cv64": {
+    "id": "cv64",
+    "title": "Castlevania 64",
+    "original_system": "Nintendo 64",
+    "release_year": "1999",
+    "developer": "Konami Computer Entertainment Kobe",
+    "synopsis": "Castlevania's first journey into three dimensions. Take control of whip-wielding Reinhardt Schneider or young magical prodigy Carrie Fernandez as they ascend Dracula's castle.",
+    "runner_type": "retroarch",
+    "core_path": "cores/mupen64plus_next_libretro",
+    "supported_regions": ["US", "JP", "EU"],
+    "default_region": "US",
+    "theme_track": "assets/audio/cv64_theme.mp3",
+    "regions": {
+      "US": {
+        "title": "Castlevania (US)",
+        "rom_path": "games/cv64/cv64_us.z64"
+      },
+      "JP": {
+        "title": "Akumajou Dracula Mokushiroku: Real Action Adventure (JP)",
+        "rom_path": "games/cv64/cv64_jp.z64"
+      },
+      "EU": {
+        "title": "Castlevania (EU)",
+        "rom_path": "games/cv64/cv64_eu.z64"
+      }
+    }
+  },
+  "rebirth": {
+    "id": "rebirth",
+    "title": "Castlevania: The Adventure ReBirth",
+    "original_system": "WiiWare (Developed by M2)",
+    "release_year": "2009",
+    "developer": "M2 / Konami",
+    "synopsis": "M2's acclaimed remake of the classic adventure. Guide Christopher Belmont through punishing traps, branched routes, and classic gothic action with timeless arranged tracks.",
+    "runner_type": "dolphin",
+    "supported_regions": ["US", "JP", "EU"],
+    "default_region": "US",
+    "theme_track": "assets/audio/rebirth_theme.mp3",
+    "regions": {
+      "US": {
+        "title": "Castlevania: The Adventure ReBirth (US)",
+        "rom_path": "games/rebirth/rebirth_us.wad"
+      },
+      "JP": {
+        "title": "Dracula Densetsu ReBirth (JP)",
+        "rom_path": "games/rebirth/rebirth_jp.wad"
+      },
+      "EU": {
+        "title": "Castlevania: The Adventure ReBirth (EU)",
+        "rom_path": "games/rebirth/rebirth_eu.wad"
+      }
+    }
   }
 }

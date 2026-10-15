@@ -12,18 +12,17 @@ import (
 var assets embed.FS
 
 func main() {
-	// Create an instance of the app structure
 	app := NewApp()
 
-	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  "eclipse-app",
-		Width:  1024,
-		Height: 768,
+		Title:            "Castlevania: Eclipse Collection",
+		Width:            1920,
+		Height:           1080,
+		WindowStartState: options.Fullscreen,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
-		BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
+		BackgroundColour: &options.RGBA{R: 12, G: 10, B: 18, A: 1},
 		OnStartup:        app.startup,
 		Bind: []interface{}{
 			app,
