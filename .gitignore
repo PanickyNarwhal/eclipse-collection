@@ -3,15 +3,21 @@
 *.cue
 *.iso
 *.rom
+*.chd
+*.wad
+*.z64
+*.n64
 *.exe
 *.AppImage
 *.dmg
+emulators/
+cores/
 
 # Ignore macOS system files
 .DS_Store
 
-# Igonre Python Environment and Cache
-__pycahce__/
+# Ignore Python Environment and Cache
+__pycache__/
 .venv/
 venv/
 env/
@@ -23,9 +29,8 @@ env/
 *.so
 *.dylib
 *.app
+eclipse-app/eclipse-app
 
-# Wails
+# Wails & Node
 build/bin/
-frontend/dist/
-frontend/node_modules/
-
+node_modules/

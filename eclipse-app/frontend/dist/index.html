@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Castlevania: Eclipse Collection</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="gothic-theme">
+  <!-- Dynamic Atmospheric Background -->
+  <div class="bg-layer" id="bgLayer">
+    <div class="bg-vignette"></div>
+    <div class="bg-overlay"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="top-nav">
+      <div class="brand">
+        <img id="collectionLogo" class="collection-logo" src="assets/images/collection_logo.png" alt="Castlevania Eclipse Collection" style="display: none;" />
+        <div id="collectionText" class="brand-text">
+          <span class="crest-icon">☩</span>
+          <span class="collection-title">CASTLEVANIA</span>
+          <span class="collection-subtitle">ECLIPSE COLLECTION</span>
+        </div>
+      </div>
+      <div class="window-controls">
+        <button class="text-btn" id="audioToggleBtn" title="Toggle Audio (M)">
+          <span id="audioLabel">AUDIO ON</span>
+        </button>
+        <button class="text-btn" id="fullscreenBtn" title="Toggle Fullscreen (F11)">
+          <span>FULLSCREEN</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Showcase Area -->
+    <main class="showcase">
+      <!-- Game Info Column -->
+      <section class="game-details">
+        <div class="meta-row">
+          <span class="badge system-badge" id="systemBadge">PC ENGINE</span>
+          <span class="badge year-badge" id="yearBadge">1993</span>
+          <span class="badge dev-badge" id="devBadge">KONAMI</span>
+        </div>
+
+        <h1 class="game-title" id="gameTitle">Castlevania: Rondo of Blood</h1>
+        
+        <p class="game-synopsis" id="gameSynopsis">
+          Richter Belmont sets out with the legendary whip Vampire Killer to rescue his beloved Annette and young Maria Renard from the resurrected Lord of Darkness.
+        </p>
+
+        <!-- Region Selector & Info -->
+        <div class="region-section">
+          <span class="section-label">REGION VERSION</span>
+          <div class="region-buttons" id="regionButtons">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Action / Launch Row -->
+        <div class="action-row">
+          <button class="launch-btn" id="launchBtn">
+            <span class="btn-text">PLAY GAME</span>
+          </button>
+          <div class="status-indicator" id="statusIndicator">
+            <span class="status-dot ready"></span>
+            <span class="status-text" id="statusText">READY TO PLAY</span>
+          </div>
+        </div>
+
+        <div class="missing-hint" id="missingHint" style="display: none;">
+          <span class="hint-text" id="missingHintText">Place ROM file in: games/rondo/...</span>
+        </div>
+      </section>
+
+      <!-- Game Cover & Key Art Column -->
+      <section class="game-visuals">
+        <div class="boxart-card" id="boxartCard">
+          <div class="boxart-frame">
+            <img id="boxartImg" class="boxart-img" alt="Cover Art" src="" />
+            <div class="boxart-fallback" id="boxartFallback">
+              <div class="fallback-crest">☩</div>
+              <div class="fallback-title" id="fallbackTitle">Rondo of Blood</div>
+              <div class="fallback-system" id="fallbackSystem">PC ENGINE</div>
+            </div>
+          </div>
+          <div class="boxart-badge" id="boxartRegionBadge">USA</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Carousel -->
+    <nav class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </nav>
+
+    <!-- Footer with Controller Hints -->
+    <footer class="app-footer">
+      <div class="controller-legend">
+        <span class="legend-item"><kbd>◄</kbd> <kbd>►</kbd> Navigate</span>
+        <span class="legend-item"><kbd class="btn-a">A</kbd> / <kbd>Enter</kbd> Play</span>
+        <span class="legend-item"><kbd class="btn-y">Y</kbd> / <kbd>R</kbd> Region</span>
+        <span class="legend-item"><kbd>F11</kbd> Fullscreen</span>
+      </div>
+      <div class="game-counter" id="gameCounter">1 / 7</div>
+    </footer>
+  </div>
+
+  <audio id="bgmPlayer" loop preload="auto"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
