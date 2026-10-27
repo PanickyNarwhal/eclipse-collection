@@ -2,7 +2,6 @@
 
 <p align="left">
   <img src="./favicon.png" alt="Eclipse Collection favicon" width="48" height="48" />
-  <img src="./eclipse-app/frontend/src/assets/images/logo-universal.png" alt="Eclipse Collection logo" width="320" />
 </p>
 
 A launcher designed to unify Castlevania RoB, SotN, CoD, LoI, and LoD into a single cross platform collection.
