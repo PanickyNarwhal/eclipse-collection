@@ -1,9 +1,8 @@
-# eclipse-collection
-
-<p align="left">
-  <img src="./favicon.png" alt="Eclipse Collection favicon" width="48" height="48" />
+<p align="center">
+  <img src="./favicon.png" alt="Eclipse Collection favicon" width="128" height="128" />
 </p>
 
+# Eclipse Collection
 A launcher designed to unify Castlevania RoB, SotN, CoD, LoI, and LoD into a single cross platform collection.
 
 > [!WARNING]
