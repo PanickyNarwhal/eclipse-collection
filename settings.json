@@ -1,0 +1,14 @@
+{
+  "display_mode": "fullscreen",
+  "internal_resolution": 6,
+  "aspect_ratio": "4:3",
+  "renderer": "auto",
+  "shader_filter": "sharp",
+  "vsync": true,
+  "show_fps": false,
+  "menu_music": true,
+  "menu_volume": 50,
+  "ui_sfx": true,
+  "audio_sync": true,
+  "custom_rom_dir": ""
+}

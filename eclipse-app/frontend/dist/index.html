@@ -16,7 +16,26 @@
     <div class="bg-overlay"></div>
   </div>
 
-  <div class="app-container">
+  <!-- Start / Title Screen (Castlevania Advance & Dominus Style) -->
+  <div class="start-screen" id="startScreen">
+    <div class="start-bg" id="startBg"></div>
+    <div class="start-content">
+      <div class="start-logo-wrap">
+        <img id="startLogo" class="start-logo" src="assets/images/collection_logo.png" alt="Castlevania Eclipse Collection" style="display: none;" />
+        <div id="startLogoFallback" class="start-logo-fallback">
+          <span class="start-crest">☩</span>
+          <h1 class="start-title">CASTLEVANIA</h1>
+          <h2 class="start-subtitle">ECLIPSE COLLECTION</h2>
+        </div>
+      </div>
+      <div class="start-prompt" id="startPrompt">
+        <span class="prompt-text">PRESS ANY BUTTON</span>
+      </div>
+    </div>
+    <div class="start-version">v1.0.7</div>
+  </div>
+
+  <div class="app-container" id="mainContainer">
     <!-- Top Header -->
     <header class="top-nav">
       <div class="brand">
@@ -28,6 +47,9 @@
         </div>
       </div>
       <div class="window-controls">
+        <button class="text-btn" id="settingsBtn" title="Launcher & Graphics Settings (S)">
+          <span>SETTINGS</span>
+        </button>
         <button class="text-btn" id="audioToggleBtn" title="Toggle Audio (M)">
           <span id="audioLabel">AUDIO ON</span>
         </button>
@@ -41,13 +63,16 @@
     <main class="showcase">
       <!-- Game Info Column -->
       <section class="game-details">
-        <div class="meta-row">
-          <span class="badge system-badge" id="systemBadge">PC ENGINE</span>
-          <span class="badge year-badge" id="yearBadge">1993</span>
-          <span class="badge dev-badge" id="devBadge">KONAMI</span>
+        <div class="game-heading">
+          <img id="gameLogoImg" class="game-logo-img" alt="Game Logo" style="display: none;" />
+          <h1 class="game-title" id="gameTitle">Castlevania: Rondo of Blood</h1>
         </div>
 
-        <h1 class="game-title" id="gameTitle">Castlevania: Rondo of Blood</h1>
+        <div class="meta-row">
+          <span class="meta-system" id="systemBadge">PC ENGINE</span>
+          <span class="meta-sep">•</span>
+          <span class="meta-year" id="yearBadge">1993</span>
+        </div>
         
         <p class="game-synopsis" id="gameSynopsis">
           Richter Belmont sets out with the legendary whip Vampire Killer to rescue his beloved Annette and young Maria Renard from the resurrected Lord of Darkness.
@@ -106,10 +131,227 @@
         <span class="legend-item"><kbd>◄</kbd> <kbd>►</kbd> Navigate</span>
         <span class="legend-item"><kbd class="btn-a">A</kbd> / <kbd>Enter</kbd> Play</span>
         <span class="legend-item"><kbd class="btn-y">Y</kbd> / <kbd>R</kbd> Region</span>
+        <span class="legend-item"><kbd>S</kbd> Settings</span>
         <span class="legend-item"><kbd>F11</kbd> Fullscreen</span>
       </div>
-      <div class="game-counter" id="gameCounter">1 / 7</div>
+      <div class="game-counter" id="gameCounter">1 / 5</div>
     </footer>
+  </div>
+
+  <!-- Settings & Container Manager Modal -->
+  <div class="settings-overlay" id="settingsOverlay" style="display: none;">
+    <div class="settings-modal">
+      <div class="settings-header">
+        <div class="settings-title-group">
+          <span class="settings-crest">☩</span>
+          <h2 class="settings-heading">COLLECTION SETTINGS</h2>
+        </div>
+        <button class="text-btn" id="settingsCloseBtn">CLOSE (ESC)</button>
+      </div>
+
+      <div class="settings-tabs">
+        <button class="settings-tab active" data-tab="graphics">GRAPHICS &amp; DISPLAY</button>
+        <button class="settings-tab" data-tab="audio">AUDIO</button>
+        <button class="settings-tab" data-tab="containers">CONTAINERS &amp; ROMS</button>
+      </div>
+
+      <!-- TAB 1: GRAPHICS & DISPLAY -->
+      <div class="settings-panel active" id="tab-graphics">
+        <p class="settings-note">
+          These graphics settings are automatically injected into the isolated emulator containers on launch without altering any existing RetroArch, PCSX2, or Dolphin installations on your system.
+        </p>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">DISPLAY MODE</span>
+            <span class="setting-desc">Launch games in borderless fullscreen or desktop window</span>
+          </div>
+          <div class="setting-control">
+            <select id="optDisplayMode" class="gothic-select">
+              <option value="fullscreen">FULLSCREEN (CONSOLE MODE)</option>
+              <option value="windowed">WINDOWED (1600x900)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">INTERNAL RESOLUTION SCALE</span>
+            <span class="setting-desc">3D rendering resolution for PS1, PS2, and WiiWare titles</span>
+          </div>
+          <div class="setting-control">
+            <select id="optResolution" class="gothic-select">
+              <option value="1">1x NATIVE (ORIGINAL CONSOLE)</option>
+              <option value="2">2x ENHANCED (720P HD)</option>
+              <option value="3">3x FULL HD (1080P — RECOMMENDED)</option>
+              <option value="4">4x QUAD HD (1440P 2K)</option>
+              <option value="6">6x ULTRA HD (2160P 4K)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">ASPECT RATIO</span>
+            <span class="setting-desc">Original 4:3 framing or 16:9 widescreen patches</span>
+          </div>
+          <div class="setting-control">
+            <select id="optAspectRatio" class="gothic-select">
+              <option value="4:3">4:3 ORIGINAL</option>
+              <option value="16:9">16:9 WIDESCREEN</option>
+              <option value="stretch">STRETCH TO DISPLAY</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">GRAPHICS API / RENDERER</span>
+            <span class="setting-desc">Hardware acceleration backend used by containers</span>
+          </div>
+          <div class="setting-control">
+            <select id="optRenderer" class="gothic-select">
+              <option value="auto">AUTO (METAL / VULKAN RECOMMENDED)</option>
+              <option value="metal">APPLE METAL</option>
+              <option value="vulkan">VULKAN</option>
+              <option value="opengl">OPENGL</option>
+              <option value="software">SOFTWARE RENDERER</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">SCREEN FILTER / SHADER</span>
+            <span class="setting-desc">Pixel presentation and CRT scanline simulation</span>
+          </div>
+          <div class="setting-control">
+            <select id="optShaderFilter" class="gothic-select">
+              <option value="sharp">SHARP PIXELS</option>
+              <option value="crt">CRT SCANLINES</option>
+              <option value="smooth">SMOOTH BILINEAR</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">VERTICAL SYNC (V-SYNC)</span>
+            <span class="setting-desc">Eliminates screen tearing during gameplay</span>
+          </div>
+          <div class="setting-control">
+            <select id="optVsync" class="gothic-select">
+              <option value="true">ENABLED (TEAR-FREE)</option>
+              <option value="false">DISABLED (LOW LATENCY)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">PERFORMANCE FPS OVERLAY</span>
+            <span class="setting-desc">Display real-time frame rate counter in-game</span>
+          </div>
+          <div class="setting-control">
+            <select id="optShowFps" class="gothic-select">
+              <option value="false">HIDDEN</option>
+              <option value="true">VISIBLE</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: AUDIO -->
+      <div class="settings-panel" id="tab-audio">
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">MENU BACKGROUND MUSIC</span>
+            <span class="setting-desc">Play atmospheric theme music in the collection menu</span>
+          </div>
+          <div class="setting-control">
+            <select id="optMenuMusic" class="gothic-select">
+              <option value="true">ENABLED</option>
+              <option value="false">MUTED</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">MENU MUSIC VOLUME</span>
+            <span class="setting-desc">Adjust background music level (<span id="volValueLabel">50%</span>)</span>
+          </div>
+          <div class="setting-control">
+            <input type="range" id="optMenuVolume" class="gothic-range" min="0" max="100" value="50" />
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">MENU UI SOUND EFFECTS</span>
+            <span class="setting-desc">Play navigation and confirmation chimes</span>
+          </div>
+          <div class="setting-control">
+            <select id="optUiSfx" class="gothic-select">
+              <option value="true">ENABLED</option>
+              <option value="false">MUTED</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <span class="setting-label">EMULATION AUDIO SYNC</span>
+            <span class="setting-desc">Synchronize container audio output to video frame pacing</span>
+          </div>
+          <div class="setting-control">
+            <select id="optAudioSync" class="gothic-select">
+              <option value="true">ENABLED (CRACKLE-FREE)</option>
+              <option value="false">DISABLED (LOWEST LATENCY)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: CONTAINERS & ROMS -->
+      <div class="settings-panel" id="tab-containers">
+        <p class="settings-note">
+          Emulators run inside isolated portable containers in <code>emulators/</code> with dedicated configs, BIOS folders, and save files so they never conflict with system installations.
+        </p>
+
+        <div class="container-actions-bar">
+          <button class="action-pill-btn primary" id="provisionAllBtn">INITIALIZE / DOWNLOAD CONTAINERS</button>
+          <button class="action-pill-btn" id="scanRomsBtn">SCAN FOLDER FOR ROMS &amp; BIOS</button>
+        </div>
+
+        <div class="provision-progress" id="provisionProgress" style="display: none;">
+          <span class="progress-text" id="provisionProgressText">Initializing isolated containers...</span>
+        </div>
+
+        <div class="containers-list" id="containersList">
+          <!-- Populated dynamically via GetContainersStatus() -->
+        </div>
+      </div>
+
+      <div class="settings-footer">
+        <span class="settings-save-status" id="settingsSaveStatus">All changes apply automatically to isolated containers.</span>
+        <button class="dialog-btn" id="saveSettingsBtn">SAVE &amp; APPLY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gothic Notification & Error Modal -->
+  <div class="dialog-overlay" id="dialogOverlay" style="display: none;">
+    <div class="dialog-card">
+      <div class="dialog-crest">☩</div>
+      <h3 class="dialog-title" id="dialogTitle">LAUNCH STATUS</h3>
+      <p class="dialog-message" id="dialogMessage"></p>
+      <div class="dialog-tip" id="dialogTip"></div>
+      <div class="dialog-actions">
+        <button class="dialog-btn secondary" id="dialogActionBtn" style="display: none;">OPEN CONTAINER SETUP</button>
+        <button class="dialog-btn" id="dialogCloseBtn">DISMISS</button>
+      </div>
+    </div>
   </div>
 
   <audio id="bgmPlayer" loop preload="auto"></audio>

@@ -160,9 +160,9 @@
   "rebirth": {
     "id": "rebirth",
     "title": "Castlevania: The Adventure ReBirth",
-    "original_system": "WiiWare (Developed by M2)",
+    "original_system": "WiiWare",
     "release_year": "2009",
-    "developer": "M2 / Konami",
+    "developer": "Konami",
     "synopsis": "M2's acclaimed remake of the classic adventure. Guide Christopher Belmont through punishing traps, branched routes, and classic gothic action with timeless arranged tracks.",
     "runner_type": "dolphin",
     "supported_regions": ["US", "JP", "EU"],

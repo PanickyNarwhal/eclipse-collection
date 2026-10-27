@@ -50,6 +50,8 @@ type GameStatus struct {
 	Available      bool            `json:"available"`
 	ActiveRegion   Region          `json:"active_region"`
 	MissingFile    string          `json:"missing_file,omitempty"`
+	MissingRunner  string          `json:"missing_runner,omitempty"`
+	ResolvedRom    string          `json:"resolved_rom,omitempty"`
 	RegionsStatus  map[Region]bool `json:"regions_status"`
 	RunnerReady    bool            `json:"runner_ready"`
 	RunnerPath     string          `json:"runner_path"`

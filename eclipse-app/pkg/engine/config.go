@@ -171,9 +171,9 @@ func DefaultLibrary() map[string]Game {
 		"rebirth": {
 			ID:             "rebirth",
 			Title:          "Castlevania: The Adventure ReBirth",
-			OriginalSystem: "WiiWare (Developed by M2)",
+			OriginalSystem: "WiiWare",
 			ReleaseYear:    "2009",
-			Developer:      "M2 / Konami",
+			Developer:      "Konami",
 			Synopsis:       "M2's acclaimed remake of the classic adventure. Guide Christopher Belmont through punishing traps, branched routes, and classic gothic action with timeless arranged tracks.",
 			RunnerType:     RunnerDolphin,
 			SupportedRegions: []Region{RegionUS, RegionJP, RegionEU},

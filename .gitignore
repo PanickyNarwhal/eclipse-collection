@@ -1,20 +1,33 @@
-# Ignore ROMs and Emulators
+# Ignore ROMs, BIOS, and Emulators
 *.bin
 *.cue
 *.iso
+*.img
+*.ccd
+*.sub
 *.rom
 *.chd
 *.wad
+*.pce
+*.cso
+*.wbfs
 *.z64
 *.n64
+*.v64
+*.7z
+*.zip
 *.exe
+*.msi
 *.AppImage
 *.dmg
 emulators/
 cores/
+bios/
+releases/
 
 # Ignore macOS system files
 .DS_Store
+Icon*
 
 # Ignore Python Environment and Cache
 __pycache__/
