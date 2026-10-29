@@ -6,7 +6,7 @@
 A launcher designed to unify Castlevania RoB, SotN, CoD, LoI, and ReBirth into a single cross platform collection.
 
 > [!WARNING]
-> There was heavy usage of an LLM to make this. I do not have the time to write this all by hand, I wrote the framework or base of the code, then I gave it to my LLM to clean up and fix. 
+> There was heavy usage of an LLM to make this. I do not have the time to write this all by hand, I wrote the framework or base of the code, then I gave it to my LLM to clean up and fix. I believe AI can be used as a tool, and if it's guided and managed correctly, that it can be incredibly efficient and helpful.  
 
 ## Games in the Collection
 | Title | Original Platform | Release Year | Supported Regions | Container Runner |
